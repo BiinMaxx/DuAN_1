@@ -23,11 +23,11 @@
                 $mo_ta = $_POST['mo_ta'];
 
             }
-            $error = [];
+            $errors = [];
             if (empty($ten_danh_muc)) {
-                $error['$ten_danh_muc'] = 'Tên danh mục không được để trống';
+                $errors['$ten_danh_muc'] = 'Tên danh mục không được để trống';
             }
-            if (empty($error)) {
+            if (empty($errors)) {
                 # code...
                 $this->modelDanhMuc->insertDanhMuc($ten_danh_muc, $mo_ta);
                 header("location:".BASE_URL_ADMIN. '?act=danh-muc');
@@ -58,11 +58,11 @@
                 $mo_ta = $_POST['mo_ta'];
 
             }
-            $error = [];
+            $errors = [];
             if (empty($ten_danh_muc)) {
-                $error['$ten_danh_muc'] = 'Tên danh mục không được để trống';
+                $errors['$ten_danh_muc'] = 'Tên danh mục không được để trống';
             }
-            if (empty($error)) {
+            if (empty($errors)) {
                 # code...
                 $this->modelDanhMuc->updateDanhMuc($id, $ten_danh_muc, $mo_ta);
                 header("location:".BASE_URL_ADMIN. '?act=danh-muc');

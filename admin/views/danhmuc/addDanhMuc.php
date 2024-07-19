@@ -40,8 +40,8 @@ require './views/layout/sidebar.php';
                     <label>Tên danh mục</label>
                     <input type="text" class="form-control" name="ten_danh_muc" placeholder="Nhập tên danh mục">
                     <?php
-                    if(isset($error['ten_danh_muc'])){?>
-                    <p class="text-danger"><?= $error['ten_danh_muc'] ?></p>
+                    if(isset($errors['ten_danh_muc'])){?>
+                    <p class="text-danger"><?= $errors['ten_danh_muc'] ?></p>
                 <?php   }?>
                     
                 </div>

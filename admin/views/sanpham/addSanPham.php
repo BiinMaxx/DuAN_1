@@ -40,8 +40,8 @@ require './views/layout/sidebar.php';
                     <label>Tên Sản Phẩm</label>
                     <input type="text" class="form-control" name="ten_san_pham" placeholder="Nhập tên Sản Phẩm">
                     <?php
-                    if(isset($error['ten_san_pham'])){?>
-                    <p class="text-danger"><?= $error['ten_san_pham'] ?></p>
+                    if(isset($_SESSION['error']['ten_san_pham'])){?>
+                    <p class="text-danger"><?= $_SESSION['error']['ten_san_pham'] ?></p>
                     <?php   }?>
                   </div>
 
@@ -49,8 +49,8 @@ require './views/layout/sidebar.php';
                     <label>Giá Sản Phẩm</label>
                     <input type="text" class="form-control" name="gia_san_pham" placeholder="Nhập giá Sản Phẩm">
                     <?php
-                    if(isset($error['gia_san_pham'])){?>
-                    <p class="text-danger"><?= $error['gia_san_pham'] ?></p>
+                    if(isset($_SESSION['error']['gia_san_pham'])){?>
+                    <p class="text-danger"><?= $_SESSION['error']['gia_san_pham'] ?></p>
                     <?php   }?>
                   </div>
 
@@ -58,8 +58,8 @@ require './views/layout/sidebar.php';
                     <label>Giá khuyến mãi</label>
                     <input type="text" class="form-control" name="gia_khuyen_mai" placeholder="Nhập giá khuyến mãi">
                     <?php
-                    if(isset($error['gia_khuyen_mai'])){?>
-                    <p class="text-danger"><?= $error['gia_khuyen_mai'] ?></p>
+                    if(isset($_SESSION['error']['gia_khuyen_mai'])){?>
+                    <p class="text-danger"><?= $_SESSION['error']['gia_khuyen_mai'] ?></p>
                     <?php   }?>
                   </div>
                   
@@ -67,8 +67,8 @@ require './views/layout/sidebar.php';
                     <label>Hình ảnh</label>
                     <input type="file" class="form-control" name="hinh_anh">
                     <?php
-                    if(isset($error['hinh_anh'])){?>
-                    <p class="text-danger"><?= $error['hinh_anh'] ?></p>
+                    if(isset($_SESSION['error']['hinh_anh'])){?>
+                    <p class="text-danger"><?= $_SESSION['error']['hinh_anh'] ?></p>
                     <?php   }?>
                   </div>
 
@@ -81,8 +81,8 @@ require './views/layout/sidebar.php';
                     <label>Số Lượng</label>
                     <input type="text" class="form-control" name="so_luong" placeholder="Nhập số lượng">
                     <?php
-                    if(isset($error['so_luong'])){?>
-                    <p class="text-danger"><?= $error['so_luong'] ?></p>
+                    if(isset($_SESSION['error']['so_luong'])){?>
+                    <p class="text-danger"><?= $_SESSION['error']['so_luong'] ?></p>
                     <?php   }?>
                   </div>
                   
@@ -90,8 +90,8 @@ require './views/layout/sidebar.php';
                     <label>Ngày nhập</label>
                     <input type="date" class="form-control" name="ngay_nhap" >
                     <?php
-                    if(isset($error['ngay_nhap'])){?>
-                    <p class="text-danger"><?= $error['ngay_nhap'] ?></p>
+                    if(isset($_SESSION['error']['ngay_nhap'])){?>
+                    <p class="text-danger"><?= $_SESSION['error']['ngay_nhap'] ?></p>
                     <?php   }?>
                   </div>
 
@@ -105,8 +105,8 @@ require './views/layout/sidebar.php';
                       
                     </select>
                     <?php
-                    if(isset($error['gia_khuyen_mai'])){?>
-                    <p class="text-danger"><?= $error['gia_khuyen_mai'] ?></p>
+                    if(isset($_SESSION['error']['gia_khuyen_mai'])){?>
+                    <p class="text-danger"><?= $_SESSION['error']['gia_khuyen_mai'] ?></p>
                     <?php   }?>
                   </div>
 
@@ -119,8 +119,8 @@ require './views/layout/sidebar.php';
                       
                     </select>
                     <?php
-                    if(isset($error['trang_thai'])){?>
-                    <p class="text-danger"><?= $error['trang_thai'] ?></p>
+                    if(isset($_SESSION['error']['trang_thai'])){?>
+                    <p class="text-danger"><?= $_SESSION['error']['trang_thai'] ?></p>
                     <?php   }?>
                   </div>
 

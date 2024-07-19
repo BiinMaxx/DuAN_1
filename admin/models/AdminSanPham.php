@@ -26,8 +26,8 @@
         }
         public function insertSanPham($ten_san_pham, $gia_san_pham, $gia_khuyen_mai, $so_luong, $danh_muc_id, $ngay_nhap, $trang_thai,$mo_ta,$hinh_anh){
             try{
-                $sql = 'INSERT INTO san_phams (ten_san_pham, gia_san_pham, gia_khuyen_mai, so_luong, danh_muc_id, ngay_nhap, trang_thai,mo_ta)
-                        VALUE (:ten_san_pham, :gia_san_pham, :gia_khuyen_mai, :so_luong, :danh_muc_id, :ngay_nhap, :trang_thai,:mo_ta)';
+                $sql = 'INSERT INTO san_phams (ten_san_pham, gia_san_pham, gia_khuyen_mai, so_luong, danh_muc_id, ngay_nhap, trang_thai,mo_ta,hinh_anh)
+                        VALUE (:ten_san_pham, :gia_san_pham, :gia_khuyen_mai, :so_luong, :danh_muc_id, :ngay_nhap, :trang_thai,:mo_ta,:hinh_anh)';
 
                 $stmt=  $this ->conn->prepare($sql);
 
@@ -40,53 +40,109 @@
                     ':ngay_nhap'=> $ngay_nhap,
                     ':trang_thai'=> $trang_thai,
                     ':mo_ta'=> $mo_ta,
+                    ':hinh_anh'=> $hinh_anh
                 ]
                     
                 );
+                // lay id sp vua them
+                return $this->conn->lastInsertId();
+                
+            }catch(Exception $e){
+                echo "Lỗi" . $e->getMessage();
+            }
+        }
 
+
+        public function insertAlbumAnhSanPham($san_pham_id,$link_hinh_anh){
+            try{
+                $sql = 'INSERT INTO hinh_anh_san_phams (san_pham_id, link_hinh_anh)
+                        VALUE (:san_pham_id, :link_hinh_anh)';
+
+                $stmt=  $this ->conn->prepare($sql);
+
+                $stmt->execute([
+                    ':san_pham_id'=> $san_pham_id,
+                    ':link_hinh_anh'=> $link_hinh_anh,
+                ]
+                    
+                );
+                // lay id sp vua them
                 return true;
                 
             }catch(Exception $e){
                 echo "Lỗi" . $e->getMessage();
             }
         }
-        // public function getOneDanhMuc($id){
-        //     try{
-        //         $sql = 'SELECT * FROM danh_mucs WHERE id = :id';
+        public function getOneSanPham($id){
+            try{
+                $sql = 'SELECT * FROM san_phams WHERE id = :id';
 
-        //         $stmt=  $this ->conn->prepare($sql);
+                $stmt=  $this ->conn->prepare($sql);
 
-        //         $stmt->execute([
-        //             ':id'   => $id
-        //         ]
+                $stmt->execute([
+                    ':id'   => $id
+                ]
                     
-        //         );
-        //         return $stmt->fetch();
-        //     }catch(Exception $e){
-        //         echo "Lỗi" . $e->getMessage();
-        //     }
-        // }
-        // public function updateDanhMuc($id, $ten_danh_muc, $mo_ta){
-        //     try{
-        //         $sql = 'UPDATE danh_mucs 
-        //         SET ten_danh_muc = :ten_danh_muc,
-        //             mo_ta        = :mo_ta
-        //             WHERE id= :id';
+                );
+                return $stmt->fetch();
+            }catch(Exception $e){
+                echo "Lỗi" . $e->getMessage();
+            }
+        }
+        public function getListAnhSanPham($id){
+            try{
+                $sql = 'SELECT * FROM hinh_anh_san_phams WHERE san_pham_id = :id';
 
-        //         $stmt=  $this ->conn->prepare($sql);
+                $stmt=  $this ->conn->prepare($sql);
 
-        //         $stmt->execute([
-        //             ':ten_danh_muc'=> $ten_danh_muc,
-        //             ':mo_ta'       => $mo_ta,
-        //             ':id' => $id
-        //         ]
+                $stmt->execute([
+                    ':id'   => $id
+                ]
                     
-        //         );
-        //         return true;
-        //     }catch(Exception $e){
-        //         echo "Lỗi" . $e->getMessage();
-        //     }
-        // }
+                );
+                return $stmt->fetchAll();
+            }catch(Exception $e){
+                echo "Lỗi" . $e->getMessage();
+            }
+        }
+        public function updateSanPham($san_pham_id,$ten_san_pham, $gia_san_pham, $gia_khuyen_mai, $so_luong, $danh_muc_id, $ngay_nhap, $trang_thai,$mo_ta,$hinh_anh){
+            try{
+                $sql = 'UPDATE san_phams SET 
+                ten_san_pham = :ten_san_pham,
+                gia_san_pham = :gia_san_pham,
+                gia_khuyen_mai = :gia_khuyen_mai,
+                so_luong = :so_luong,
+                danh_muc_id = :danh_muc_id,
+                ngay_nhap = :ngay_nhap,
+                trang_thai = :trang_thai,
+                mo_ta = :mo_ta,
+                hinh_anh = :hinh_anh
+                WHERE id = :id
+                ';
+
+                $stmt=  $this ->conn->prepare($sql);
+
+                $stmt->execute([
+                    ':ten_san_pham'=> $ten_san_pham,
+                    ':gia_san_pham'=> $gia_san_pham,
+                    ':gia_khuyen_mai'=> $gia_khuyen_mai,
+                    ':so_luong'=> $so_luong,
+                    ':danh_muc_id'=> $danh_muc_id,
+                    ':ngay_nhap'=> $ngay_nhap,
+                    ':trang_thai'=> $trang_thai,
+                    ':mo_ta'=> $mo_ta,
+                    ':hinh_anh'=> $hinh_anh,
+                    ':id'=> $san_pham_id
+                ]
+                    
+                );
+                // lay id sp vua them
+                return true;
+                
+            }catch(Exception $e){
+                echo "Lỗi" . $e->getMessage();
+            }
+        }
         // public function destroyDanhMuc($id){
         //     try{
         //         $sql = 'DELETE FROM danh_mucs  
