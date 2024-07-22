@@ -16,8 +16,11 @@ require './views/layout/sidebar.php';
   <section class="content-header">
     <div class="container-fluid">
       <div class="row mb-2">
-        <div class="col-sm-6">
+        <div class="col-sm-11">
           <h1>Edit Thông Tin Sản Phẩm: <?= $sanPham['ten_san_pham'] ?></h1>
+        </div>
+        <div class="col-sm-1">
+          <a href="<?= BASE_URL_ADMIN .'?act=san-pham' ?>" class="btn btn-secondary">Quay Lại</a>
         </div>
       </div>
     </div><!-- /.container-fluid -->
@@ -30,7 +33,6 @@ require './views/layout/sidebar.php';
         <div class="card card-primary">
           <div class="card-header">
             <h3 class="card-title">Thông tin sản phẩm</h3>
-
             <div class="card-tools">
               <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
                 <i class="fas fa-minus"></i>
@@ -91,8 +93,8 @@ require './views/layout/sidebar.php';
               </div>
             </div>
             <!-- /.card-body -->
-            <div class="cart-footer">
-              <button class="btn btn-primary" type="submit">Sửa thông tin</button>
+            <div class="cart-footer d-flex justify-content-center mb-2">
+              <button class="btn btn-primary " type="submit">Sửa thông tin</button>
             </div>
         </div>
         </form>
@@ -140,12 +142,7 @@ require './views/layout/sidebar.php';
         <!-- /.card -->
       </div>
     </div>
-    <div class="row">
-      <div class="col-12">
-        <a href="#" class="btn btn-secondary">Cancel</a>
-        <input type="submit" value="Save Changes" class="btn btn-success float-right">
-      </div>
-    </div>
+    
   </section>
   <!-- /.content -->
 </div>
@@ -163,7 +160,7 @@ require './views/layout/footer.php';
     html = '<tr id="faqs-row' + faqs_row + '">';
     html += '<td><img src="https://picsum.photos/110/130" alt="" width="50px"></td>';
     html += '<td><input type="file" name="img_array[]" class="form-control"></td>';
-    html += '<td class="mt-10"><button class="badge badge-danger" onclick="removeRow('+ faqs_row +',null)"><i class="fa fa-trash"></i> Delete</button></td>';
+    html += '<td class="mt-10"><button class="badge badge-danger" onclick="removeRow('+ faqs_row +',null);"><i class="fa fa-trash"></i> Delete</button></td>';
 
     html += '</tr>';
 

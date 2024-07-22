@@ -47,3 +47,14 @@ function deleteSessionError(){
         session_destroy();
     }
 }
+
+function uploadFileAlbum($file, $folderUpload,$key){
+    $pathStorage = $folderUpload . time() .$file['name'][$key];
+    $from = $file['tmp_name'][$key];
+    $to = PATH_ROOT . $pathStorage;
+
+    if(move_uploaded_file($from,$to)){
+        return $pathStorage;
+    }
+    return null;
+}
