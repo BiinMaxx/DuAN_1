@@ -91,12 +91,13 @@ class AdminSanPhamController
                     foreach ($img_array['name'] as $key => $value) {
                         $file = [
                             'name' => $img_array['name'][$key],
-                            'type' => $img_array['name'][$key],
-                            'tmp_name' => $img_array['name'][$key],
-                            'error' => $img_array['name'][$key],
-                            'size' => $img_array['name'][$key]
+                            'type' => $img_array['type'][$key],
+                            'tmp_name' => $img_array['tmp_name'][$key],
+                            'error' => $img_array['error'][$key],
+                            'size' => $img_array['size'][$key]
                         ];
                         $link_hinh_anh = uploadFile($file, './uploads/');
+                        
                         $this->modelSanPham->insertAlbumAnhSanPham($san_pham_id, $link_hinh_anh);
                     }
                 }
@@ -300,7 +301,7 @@ class AdminSanPhamController
         $sanPham = $this->modelSanPham->getOneSanPham($id);
         $listAnhSanPham = $this->modelSanPham->getListAnhSanPham($id);
         if ($sanPham) {
-            require_once './views/sanpham/detailSanPham.php';
+            require_once './views/sanpham/detailSanPham.php'; 
         } else {
             header("location:" . BASE_URL_ADMIN . '?act=san-pham');
             exit();
