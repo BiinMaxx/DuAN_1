@@ -61,8 +61,10 @@ require './views/layout/sidebar.php';
                               <td><?= $donHang['ten_trang_thai'] ?></td>
                               <td>
                                 <div class="btn-group">
+                                <a href="<?= BASE_URL_ADMIN . '?act=chi-tiet-don-hang&id_don_hang='.$donHang['id']?>">
+                                <button class="btn btn-primary">Xem</button></a>
                                 <a href="">
-                                <button class="btn btn-primary"></button></a>
+                                <button class="btn btn-primary">Xoá</button></a>
                                 <a href="">
                                 <button class="btn btn-warning">Sửa</button></a>
                             </div>

@@ -15,6 +15,39 @@
 
             require_once './views/donhang/listDonHang.php';
         }
+        public function detailDonHang()
+        {
+            $don_hang_id = $_GET['id_don_hang'];
+
+            // Lấy thông tin đơn hàng ở bản don_hangs
+
+            $donHang = $this->modelDonHang->getDetailDonHang($don_hang_id);
+            
+            // Lấy danh sách sản phẩm đã đặt của đơn hàng ở bảng chi_tiet_don_hangs
+
+            $sanPhamDonHang = $this->modelDonHang->getListSpDonHang($don_hang_id);
+
+            $listTrangThaiDonHang = $this->modelDonHang->getAllTrangThaiDonHang();
+            
+            require_once './views/donhang/detailDonHang.php';
+
+        }
+        public function formEditDonHang()
+        {
+
+            $id = $_GET['id_don_hang'];
+            $donHang = $this->modelDonHang->getDetailDonHang($id);
+            $listTrangThaiDonHang = $this->modelDonHang->getAllTrangThaiDonHang();
+            if ($donHang) {
+                require_once './views/don/editDonHang.php';
+                deleteSessionError();
+            } else {
+                header("Location:" .BASE_URL_ADMIN, '?act-don-hang');
+                exit();
+            }
+            }
+        }
+
 
     //     public function postAddSanPham(){
     //         // Hiển thị xử lý dl
@@ -120,4 +153,4 @@
     //             exit();
             
     //     }
-    }
+    

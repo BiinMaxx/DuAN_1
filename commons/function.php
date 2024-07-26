@@ -58,3 +58,7 @@ function uploadFileAlbum($file, $folderUpload,$key){
     }
     return null;
 }
+// format data
+function formatDate($date){ 
+    return date("d-m-Y", strtotime($date));
+}
