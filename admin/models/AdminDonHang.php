@@ -38,6 +38,7 @@
                 echo "Lỗi" . $e->getMessage();
             }
         }
+    
         
         public function getDetailDonHang($id) {
 
@@ -52,7 +53,7 @@
                 FROM don_hangs 
                 INNER JOIN trang_thai_don_hangs ON don_hangs.trang_thai_id = trang_thai_don_hangs.id 
                 INNER JOIN tai_khoans ON don_hangs.tai_khoan_id = tai_khoans. id
-                -- INNER JOIN phuong_thuc_thanh_toans ON don_hangs.phuong_thuc_thanh_toan_id = phuong_thuc_thanh_toans.id
+                INNER JOIN phuong_thuc_thanh_toans ON don_hangs.phuong_thuc_thanh_toan_id = phuong_thuc_thanh_toans.id
                 WHERE don_hangs.id = :id';
             
             $stmt = $this->conn->prepare($sql);
@@ -88,6 +89,64 @@
 
     }
 }
+    
+    public function updateDonHang($id,$ten_nguoi_nhan, $sdt_nguoi_nhan, $email_nguoi_nhan, $dia_chi_nguoi_nhan, $ghi_chu, $trang_thai_id,){
+    try{
+
+        $sql = 'UPDATE don_hangs
+        SET 
+           ten_nguoi_nhan = :ten_nguoi_nhan,
+           sdt_nguoi_nhan = :sdt_nguoi_nhan,
+           email_nguoi_nhan = :email_nguoi_nhan,
+           dia_chi_nguoi_nhan = :dia_chi_nguoi_nhan,
+           ghi_chu = :ghi_chu,
+           trang_thai_id = :trang_thai_id,
+        WHERE id = :id';
+    $stmt = $this->conn->prepare($sql);
+
+    $stmt-> execute([
+         ':ten_nguoi_nhan' => $ten_nguoi_nhan,
+         ':sdt_nguoi_nhan' => $sdt_nguoi_nhan,
+         ':email_nguoi_nhan' => $email_nguoi_nhan,
+         ':dia_chi_nguoi_nhan' => $dia_chi_nguoi_nhan,
+         ':ghi_chu' => $ghi_chu,
+         ':trang_thai_id' => $trang_thai_id,
+         ':id' => $id,
+        ]);
+
+    
+          return true;
+    }catch (Exception $e) {
+     echo "lỗi" . $e->getmassage();
+    }
+}
+    
+        // public function updateDonHang($id,$ten_nguoi_nhan, $sdt_nguoi_nhan, $email_nguoi_nhan, $dia_chi_nguoi_nhan, $ghi_chu, $trang_thai_id){
+        //     try{
+        //         $sql = 'UPDATE don_hangs
+        //         SET
+
+        //         $stmt=  $this ->conn->prepare($sql);
+
+        //         $stmt->execute([
+        //             ':ten_san_pham'=> $ten_san_pham,
+        //             ':gia_san_pham'=> $gia_san_pham,
+        //             ':gia_khuyen_mai'=> $gia_khuyen_mai,
+        //             ':so_luong'=> $so_luong,
+        //             ':danh_muc_id'=> $danh_muc_id,
+        //             ':ngay_nhap'=> $ngay_nhap,
+        //             ':trang_thai'=> $trang_thai,
+        //             ':mo_ta'=> $mo_ta,
+        //         ]
+                    
+        //         );
+
+        //         return true;
+                
+        //     }catch(Exception $e){
+        //         echo "Lỗi" . $e->getMessage();
+        //     }
+        // }
         // public function insertSanPham($ten_san_pham, $gia_san_pham, $gia_khuyen_mai, $so_luong, $danh_muc_id, $ngay_nhap, $trang_thai,$mo_ta,$hinh_anh){
         //     try{
         //         $sql = 'INSERT INTO san_phams (ten_san_pham, gia_san_pham, gia_khuyen_mai, so_luong, danh_muc_id, ngay_nhap, trang_thai,mo_ta)
@@ -169,3 +228,4 @@
         //     }
         // }
     }
+    

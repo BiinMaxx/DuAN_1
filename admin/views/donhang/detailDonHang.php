@@ -90,11 +90,11 @@ require './views/layout/sidebar.php';
                 </div>
                 <!-- /.col -->
                 <div class="col-sm-4 invoice-col">
-                  <b>Mã đơn hàng: <?= $donHang['ma_don_hang']; ?></b><br>
+                  <b>Mã đơn hàng: <?= $donHang['ma_don_hang'] ?></b><br>
                   <br>
-                  <b>Tổng tiền:</b> <?= $donHang['tong_tien']; ?><br>
-                  <b>Ghi chú:</b> <?= $donHang['ghi_chu']; ?><br>
-                  <!-- <b>Thanh toán:</b> <?= $donHang['ten_phuong_thuc']; ?> -->
+                  <b>Tổng tiền:</b> <?= $donHang['tong_tien'] ?><br>
+                  <b>Ghi chú:</b> <?= $donHang['ghi_chu'] ?><br>
+                  <b>Thanh toán:</b> <?= $donHang['ten_phuong_thuc'] ?>
                 </div>
                 <!-- /.col -->
               </div>

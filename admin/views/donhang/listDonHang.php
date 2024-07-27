@@ -65,7 +65,7 @@ require './views/layout/sidebar.php';
                                 <button class="btn btn-primary">Xem</button></a>
                                 <a href="">
                                 <button class="btn btn-primary">Xoá</button></a>
-                                <a href="">
+                                <a href="<?= BASE_URL_ADMIN . '?act=form-sua-don-hang&id_don_hang='.$donHang['id']?>">
                                 <button class="btn btn-warning">Sửa</button></a>
                             </div>
                             </td>
