@@ -17,7 +17,7 @@ require './views/layout/sidebar.php';
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1>Quản lý danh mục</h1>
+          <h1>Quản lý tài khoản Admin</h1>
         </div>
       </div>
     </div><!-- /.container-fluid -->
@@ -33,8 +33,8 @@ require './views/layout/sidebar.php';
               <div class="card-body">
                 <div id="example1_wrapper" class="dataTables_wrapper dt-bootstrap4">
                   <div class="row">
-                  <a href="<?= BASE_URL_ADMIN . '?act=form-them-danh-muc' ?>">
-                    <button class="btn btn-success">Thêm mới danh mục</button>
+                  <a href="<?= BASE_URL_ADMIN . '?act=form-them-quan-tri' ?>">
+                    <button class="btn btn-success mb-3">Thêm tài khoản</button>
                   </a>
                   </div>
                   <div class="row">
@@ -43,23 +43,27 @@ require './views/layout/sidebar.php';
                         <thead>
                           <tr>
                             <th>STT</th>
-                            <th>Tên danh mục</th>
-                            <th>Mô tả</th>
-                            <th>Thao tác</th>
+                            <th>Họ tên:</th>
+                            <th>Email</th>
+                            <th>SDT</th>
+                            <th>Trạng thái</th>
+                            <th>Thao Tác</th>
                           </tr>
                         </thead>
                         <tbody>
-                          <?php foreach ($listDanhMuc as $key => $danhMuc): ?>
+                          <?php foreach ($listQuanTri as $key => $quanTri): ?>
                             <tr>
                               <td><?= $key + 1 ?></td>
-                              <td><?= $danhMuc['ten_danh_muc'] ?></td>
-                              <td><?= $danhMuc['mo_ta'] ?></td>
+                              <td><?= $quanTri['ho_ten'] ?></td>
+                              <td><?= $quanTri['email'] ?></td>
+                              <td><?= $quanTri['so_dien_thoai'] ?></td>
+                              <td><?= $quanTri['trang_thai'] ==1 ? 'Active' : 'Inactive' ?></td>
                               <td>
-                                <a href="<?= BASE_URL_ADMIN . '?act=form-sua-danh-muc&id_danh_muc='.$danhMuc['id'] ?>">
+                                <a href="<?= BASE_URL_ADMIN . '?act=form-sua-quan-tri&id_quan_tri='.$quanTri['id'] ?>">
                                 <button class="btn btn-warning">Sửa</button></a>
-                                <a href="<?= BASE_URL_ADMIN . '?act=xoa-danh-muc&id_danh_muc='.$danhMuc['id'] ?>"
-                                onclick="return confirm('Bạn có đồng ý xóa không?')">
-                                <button class="btn btn-danger">Xóa</button></a>
+                                <a href="<?= BASE_URL_ADMIN . '?act=reset-password&id_quan_tri='.$quanTri['id'] ?>"
+                                onclick="return confirm('Bạn có đồng ý reset password cua tk không?')">
+                                <button class="btn btn-danger">Reset</button></a>
                               </td>
                             </tr>
                           <?php endforeach ?>

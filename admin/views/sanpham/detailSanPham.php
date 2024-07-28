@@ -53,56 +53,39 @@ require './views/layout/sidebar.php';
               <h4 class="mt-3">Mô tả:  <small><?= $sanPham['mo_ta']?></small></h4>
             </div>
           </div>
-          <div class="row mt-4">
-            <nav class="w-100">
-              <div class="nav nav-tabs" id="product-tab" role="tablist">
-                <a class="nav-item nav-link active" id="product-desc-tab" data-toggle="tab" href="#binh-luan" role="tab" aria-controls="product-desc" aria-selected="true">Bình luận của sản phẩm</a>
-              </div>
-            </nav>
-            <div class="tab-content p-3 col-md-12" id="nav-tabContent">
-              <div class="tab-pane fade show active" id="binh-luan" role="tabpanel" aria-labelledby="product-desc-tab">
-                <div class="container-fluid">
-                  <table class="table table-striped table-hover">
-                    <thead>
-                      <tr>
-                        <th>#</th>
-                        <th>Người bình luận</th>
-                        <th>Nội dung</th>
-                        <th>Ngày đăng</th>
-                        <th>Thao tác</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>1</td>
-                        <td>ABC</td>
-                        <td>Lorem ipsum dolor sit amet consectetur adipisicing elit.</td>
-                        <td>22/7//2024</td>
-                        <td>
-                          <div class="btn-group">
-                            <a href=""><button class="btn btn-warning">Ẩn</button></a>
-                            <a href=""><button class="btn btn-danger">Xóa</button></a>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>2</td>
-                        <td>ABC</td>
-                        <td>Lorem ipsum dolor sit amet consectetur adipisicing elit.</td>
-                        <td>22/7//2024</td>
-                        <td>
-                          <div class="btn-group">
-                            <a href=""><button class="btn btn-warning">Ẩn</button></a>
-                            <a href=""><button class="btn btn-danger">Xóa</button></a>
-                          </div>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
+          <div class="col-12 mt-3">
+                    <hr>
+                    <h2>Lịch sử bình luận</h2>
+                    <table id="example1" class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>STT</th>
+                                <th>Người bình luận</th>
+                                <th>Nôi dung</th>
+                                <th>Ngày bình luận</th>
+                                <th>Trạng thái</th>
+                                <th>Thao tác</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach ($listBinhLuan as $key => $binhLuan) : ?>
+                                <tr>
+                                    <td><?= $key + 1 ?></td>
+                                    <td> <a target="_blank" href="<?= BASE_URL_ADMIN . '?act=chi-tiet-khach-hang&id_khach_hang='.$binhLuan['tai_khoan_id'] ?>"><?= $binhLuan['ho_ten'] ?></a></td>
+                                    <td><?= $binhLuan['noi_dung'] ?></td>
+                                    <td><?= $binhLuan['ngay_dang'] ?></td>
+                                    <td><?= $binhLuan['trang_thai']==1?'Hiển thị':'Bị ẩn' ?></td>
+                                    <td>
+                                        <form action="<?= BASE_URL_ADMIN . '?act=update-trang-thai-binh-luan'?>" method="post">
+                                            <input type="hidden" name="id_binh_luan" value="<?= $binhLuan['id']?>">
+                                            <button class="btn btn-danger" onclick="return confirm('Bạn có đồng ý ẩn bình luận này không?')"><?= $binhLuan['trang_thai']==2?'Hiển thị':'Ẩn' ?></button></a>
+                                        </form>
+                                    </td>
+                                </tr>
+                            <?php endforeach ?>
+                        </tbody>
+                    </table>
                 </div>
-              </div>
-            </div>
-          </div>
         </div>
         <!-- /.card-body -->
       </div>
@@ -124,7 +107,6 @@ require './views/layout/footer.php';
   $(function () {
     $("#example1").DataTable({
       "responsive": true, "lengthChange": false, "autoWidth": false,
-      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
     }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
     $('#example2').DataTable({
       "paging": true,

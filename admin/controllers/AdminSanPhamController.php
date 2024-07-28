@@ -75,16 +75,16 @@ class AdminSanPhamController
             if (empty($errors)) {
                 # code...
                 $san_pham_id = $this->modelSanPham->insertSanPham(
-                                                    $ten_san_pham,
-                                                    $gia_san_pham,
-                                                    $gia_khuyen_mai,
-                                                    $so_luong,
-                                                    $danh_muc_id,
-                                                    $ngay_nhap,
-                                                    $trang_thai,
-                                                    $mo_ta,
-                                                    $file_thumb
-                                                    );
+                    $ten_san_pham,
+                    $gia_san_pham,
+                    $gia_khuyen_mai,
+                    $so_luong,
+                    $danh_muc_id,
+                    $ngay_nhap,
+                    $trang_thai,
+                    $mo_ta,
+                    $file_thumb
+                );
 
                 //xu li them album anh sp
                 if (!empty($img_array['name'])) {
@@ -97,7 +97,7 @@ class AdminSanPhamController
                             'size' => $img_array['size'][$key]
                         ];
                         $link_hinh_anh = uploadFile($file, './uploads/');
-                        
+
                         $this->modelSanPham->insertAlbumAnhSanPham($san_pham_id, $link_hinh_anh);
                     }
                 }
@@ -212,7 +212,8 @@ class AdminSanPhamController
         }
     }
 
-    public function postEditAnhSanPham(){
+    public function postEditAnhSanPham()
+    {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $san_pham_id = $_POST['san_pham_id'] ?? '';
 
@@ -226,10 +227,10 @@ class AdminSanPhamController
             $upload_file = [];
 
             //upload anh moi
-            foreach($img_array['name'] as $key=>$value){
-                if($img_array['error'][$key] == UPLOAD_ERR_OK){
+            foreach ($img_array['name'] as $key => $value) {
+                if ($img_array['error'][$key] == UPLOAD_ERR_OK) {
                     $new_file = uploadFileAlbum($img_array, './uploads/', $key);
-                    if($new_file){
+                    if ($new_file) {
                         $upload_file[] = [
                             'id' => $current_img_ids[$key] ?? null,
                             'file' => $new_file
@@ -238,23 +239,23 @@ class AdminSanPhamController
                 }
             }
 
-            foreach($upload_file as $file_info){
-                if($file_info['id']){
+            foreach ($upload_file as $file_info) {
+                if ($file_info['id']) {
                     $old_file = $this->modelSanPham->getDetailAnhSanPham($file_info['id'])['link_hinh_anh'];
 
                     //cap nhap anh cu
-                    $this->modelSanPham->updateAnhSanPham($file_info['id'],$file_info['file']);
+                    $this->modelSanPham->updateAnhSanPham($file_info['id'], $file_info['file']);
 
                     deleteFile($old_file);
-                }else{
-                    $this->modelSanPham->insertAlbumAnhSanPham($san_pham_id,$file_info['file']);
+                } else {
+                    $this->modelSanPham->insertAlbumAnhSanPham($san_pham_id, $file_info['file']);
                 }
             }
 
             //xu li xoa anh cu
-            foreach($listAnhSanPhamCurrent as $anhSP){
+            foreach ($listAnhSanPhamCurrent as $anhSP) {
                 $anh_id = $anhSP['id'];
-                if(in_array($anh_id,$img_delete)){
+                if (in_array($anh_id, $img_delete)) {
                     //xoaa anh
                     $this->modelSanPham->destroyAnhSanPham($anh_id);
 
@@ -269,54 +270,68 @@ class AdminSanPhamController
 
 
 
-        public function DeleteSanPham(){
-            $id = $_GET['id_san_pham'];
+    public function DeleteSanPham()
+    {
+        $id = $_GET['id_san_pham'];
 
-            $sanPham = $this->modelSanPham->getOneSanPham($id);
+        $sanPham = $this->modelSanPham->getOneSanPham($id);
 
-            $listAnhSanPham = $this->modelSanPham->getListAnhSanPham($id);
-            
-            if($sanPham){
-                deleteFile($sanPham['hinh_anh']);
-                $this->modelSanPham->destroySanPham($id);
-            }
+        $listAnhSanPham = $this->modelSanPham->getListAnhSanPham($id);
 
-            if($listAnhSanPham){
-                foreach($listAnhSanPham as $key=>$anhSP){
-                    deleteFile($anhSP['link_hinh_anh']);
-                    $this->modelSanPham->destroyAnhSanPham($anhSP['id']);
-
-                }
-            }
-                header("location:".BASE_URL_ADMIN. '?act=san-pham');
-                exit();
-
+        if ($sanPham) {
+            deleteFile($sanPham['hinh_anh']);
+            $this->modelSanPham->destroySanPham($id);
         }
 
+        if ($listAnhSanPham) {
+            foreach ($listAnhSanPham as $key => $anhSP) {
+                deleteFile($anhSP['link_hinh_anh']);
+                $this->modelSanPham->destroyAnhSanPham($anhSP['id']);
+            }
+        }
+        header("location:" . BASE_URL_ADMIN . '?act=san-pham');
+        exit();
+    }
 
-        public function detailSanPham()
+
+    public function detailSanPham()
     {
         // Hiển thị form
         $id = $_GET['id_san_pham'];
         $sanPham = $this->modelSanPham->getOneSanPham($id);
+
         $listAnhSanPham = $this->modelSanPham->getListAnhSanPham($id);
+
+        $listBinhLuan = $this->modelSanPham->getBinhLuanFromSanPham($id);
         if ($sanPham) {
-            require_once './views/sanpham/detailSanPham.php'; 
+            require_once './views/sanpham/detailSanPham.php';
         } else {
             header("location:" . BASE_URL_ADMIN . '?act=san-pham');
             exit();
         }
     }
 
+    public function updateTrangThaiBinhLuan()
+    {
+        $id_binh_luan = $_POST['id_binh_luan'];
+        $name_view = $_POST['name_view'];
+        $binhLuan = $this->modelSanPham->getDetailBinhLuan($id_binh_luan);
 
-
-
-
-
-
-
-
-
-
-
+        if ($binhLuan) {
+            $trang_thai_update = '';
+            if ($binhLuan['trang_thai'] == 1) {
+                $trang_thai_update = 2;
+            } else {
+                $trang_thai_update = 1;
+            }
+            $status =  $this->modelSanPham->updateTrangThaiBinhLuan($id_binh_luan, $trang_thai_update);
+            if ($status) {
+                if ($name_view == 'detail_khach') {
+                    header("location:" . BASE_URL_ADMIN . '?act=chi-tiet-khach-hang&id_khach_hang=' . $binhLuan['tai_khoan_id']);
+                }else{
+                    header("location:" . BASE_URL_ADMIN . '?act=chi-tiet-san-pham&id_san_pham=' . $binhLuan['san_pham_id']);
+                }
+            }
+        }
+    }
 }
