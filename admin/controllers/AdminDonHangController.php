@@ -19,15 +19,15 @@ class AdminDonHangController
     }
     public function detailDonHang()
     {
-        $don_hang_id = $_GET['id_don_hang'];
+        $id_don_hang = $_GET['id_don_hang'];
 
         // Lấy thông tin đơn hàng ở bản don_hangs
 
-        $donHang = $this->modelDonHang->getDetailDonHang($don_hang_id);
+        $donHang = $this->modelDonHang->getDetailDonHang($id_don_hang);
 
         // Lấy danh sách sản phẩm đã đặt của đơn hàng ở bảng chi_tiet_don_hangs
 
-        $sanPhamDonHang = $this->modelDonHang->getListSpDonHang($don_hang_id);
+        $sanPhamDonHang = $this->modelDonHang->getListSpDonHang($id_don_hang);
 
         $listTrangThaiDonHang = $this->modelDonHang->getAllTrangThaiDonHang();
 
@@ -43,7 +43,7 @@ class AdminDonHangController
             require_once './views/donhang/editDonHang.php';
             deleteSessionError();
         } else {
-            header("Location:" . BASE_URL_ADMIN, '?act=don-hang');
+            header("Location:" . BASE_URL_ADMIN . '?act=don-hang');
             exit();
         }
     }
