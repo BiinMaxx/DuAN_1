@@ -43,9 +43,7 @@ class AdminDonHang
 
     public function getDetailDonHang($id)
     {
-
         try {
-
             $sql = 'SELECT don_hangs.*, 
                 trang_thai_don_hangs.ten_trang_thai,
                 tai_khoans.ho_ten,
@@ -59,7 +57,6 @@ class AdminDonHang
                 WHERE don_hangs.id = :id';
 
             $stmt = $this->conn->prepare($sql);
-
             $stmt->execute([':id' => $id]);
 
             return $stmt->fetch();

@@ -18,7 +18,6 @@ require './views/layout/sidebar.php';
       <div class="row mb-2">
         <div class="col-sm-6">
           <h1>Thống kê</h1>
-          <h1>Báo Cáo Thông Kê</h1>
         </div>
       </div>
     </div><!-- /.container-fluid -->
