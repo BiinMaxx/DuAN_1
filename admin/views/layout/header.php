@@ -20,4 +20,11 @@
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
+  <style>
+.uniform-button {
+    width: 80px; /* Đặt chiều rộng cố định */
+    height: 40px; /* Đặt chiều cao cố định */
+    margin: 0; /* Xóa khoảng cách giữa các nút trong btn-group */
+}
+  </style>
   

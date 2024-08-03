@@ -6,7 +6,7 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-      <a href="<?= BASE_URL. '?act=trangChu' ?>" class="nav-link">Website</a>
+      <a href="<?= BASE_URL ?>" class="nav-link">Website</a>
 
       </li>
     </ul>
@@ -16,6 +16,11 @@
       <li class="nav-item">
         <a class="nav-link" data-widget="fullscreen" href="#" role="button">
           <i class="fas fa-expand-arrows-alt"></i>
+        </a>
+      </li>
+      <li class="nav-item">
+      <a class="nav-link" href="<?= BASE_URL_ADMIN. '?act=logout-admin' ?>" onclick="return confirm('Bạn muốn đăng xuất?')">
+        <i class="fa-solid fa-right-from-bracket"></i>
         </a>
       </li>
     </ul>

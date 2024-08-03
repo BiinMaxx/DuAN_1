@@ -63,15 +63,19 @@ require './views/layout/sidebar.php';
                               <td><?= $sanPham['ten_danh_muc'] ?></td>
                               <td><?= $sanPham['trang_thai']== 1 ? 'Còn bán' :'Hết hàng' ?></td>
                               <td>
-                                <div class="btn-group">
-                                  <a href="<?= BASE_URL_ADMIN . '?act=chi-tiet-san-pham&id_san_pham='.$sanPham['id'] ?>">
-                                  <button class="btn btn-primary">Chi Tiết</button></a>
-                                  <a href="<?= BASE_URL_ADMIN . '?act=form-sua-san-pham&id_san_pham='.$sanPham['id'] ?>">
-                                  <button class="btn btn-warning">Sửa</button></a>
-                                  <a href="<?= BASE_URL_ADMIN . '?act=xoa-san-pham&id_san_pham='.$sanPham['id'] ?>"
-                                  onclick="return confirm('Bạn có đồng ý xóa không?')">
-                                  <button class="btn btn-danger">Xóa</button></a>
-                                </div>
+                              <div class="btn-group" role="group">
+                                <a href="<?= BASE_URL_ADMIN . '?act=chi-tiet-san-pham&id_san_pham='.$sanPham['id'] ?>">
+                                    <button class="btn btn-primary uniform-button">Chi Tiết</button>
+                                </a>
+                                <a href="<?= BASE_URL_ADMIN . '?act=form-sua-san-pham&id_san_pham='.$sanPham['id'] ?>">
+                                    <button class="btn btn-warning uniform-button">Sửa</button>
+                                </a>
+                                <a href="<?= BASE_URL_ADMIN . '?act=xoa-san-pham&id_san_pham='.$sanPham['id'] ?>" onclick="return confirm('Bạn có đồng ý xóa không?')">
+                                    <button class="btn btn-danger uniform-button">Xóa</button>
+                                </a>
+                            </div>
+
+
                               </td>
                             </tr>
                           <?php endforeach ?>

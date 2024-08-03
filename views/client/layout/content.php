@@ -29,18 +29,15 @@
                 <div class="container">
                     <div class="row p-5">
                         <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
-                            <img class="img-fluid" src="/DuAn/views/assets/img/women.jpg" alt="">
+                            <img class="img-fluid" src="/DuAn/views/assets/img/brand_03.png" alt="">
                         </div>
-                        <div class="col-lg-6 mb-0 d-flex align-items-center">
+                        <div class="col-lg-6 mb-0">
                             <div class="text-align-left align-self-center">
-                                <h1 class="h1 text-success"><b>Zay</b> eCommerce</h1>
-                                <h3 class="h2">Tiny and Perfect eCommerce Template</h3>
+                                <h1 class="h1 text-success"><b>Coza</b>Store</h1>
+                                <h3 class="h2">Shop Thương Mại Điện Tử Hoàn Hảo</h3>
                                 <p>
-                                    Zay Shop is an eCommerce HTML5 CSS template with latest version of Bootstrap 5 (beta 1). 
-                                    This template is 100% free provided by <a rel="sponsored" class="text-success" href="https://templatemo.com" target="_blank">TemplateMo</a> website. 
-                                    Image credits go to <a rel="sponsored" class="text-success" href="https://stories.freepik.com/" target="_blank">Freepik Stories</a>,
-                                    <a rel="sponsored" class="text-success" href="https://unsplash.com/" target="_blank">Unsplash</a> and
-                                    <a rel="sponsored" class="text-success" href="https://icons8.com/" target="_blank">Icons 8</a>.
+                                Tại Coza Shop, chúng tôi tự hào mang đến cho bạn những sản phẩm thời trang đa dạng và phong cách, phù hợp với mọi lứa tuổi và sở thích. Với sự chú trọng đến chất lượng
+                                 và dịch vụ khách hàng, chúng tôi cam kết mang đến cho bạn những trải nghiệm mua sắm tuyệt vời nhất.
                                 </p>
                             </div>
                         </div>
@@ -51,16 +48,16 @@
                 <div class="container">
                     <div class="row p-5">
                         <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
-                            <img class="img-fluid" src="/DuAn/views/assets/img/banner_img_02.jpg" alt="">
+                            <img class="img-fluid" src="./uploads/1722413243anh3-3.png" alt="">
                         </div>
-                        <div class="col-lg-6 mb-0 d-flex align-items-center">
+                        <div class="col-lg-6 mb-0">
                             <div class="text-align-left">
-                                <h1 class="h1">Proident occaecat</h1>
-                                <h3 class="h2">Aliquip ex ea commodo consequat</h3>
-                                <p>
-                                    You are permitted to use this Zay CSS template for your commercial websites. 
-                                    You are <strong>not permitted</strong> to re-distribute the template ZIP file in any kind of template collection websites.
-                                </p>
+                            <h1 class="h1">Tìm Kiếm Phong Cách</h1>
+                            <h3 class="h2">Khám Phá Bộ Sưu Tập Độc Đáo</h3>
+                            <p>
+                            Tại Coza Store, chúng tôi cung cấp những bộ sưu tập thời trang mới nhất và phong cách nhất.
+                             Hãy khám phá các sản phẩm của chúng tôi để tìm kiếm những món đồ yêu thích cho mình.
+                            </p>
                             </div>
                         </div>
                     </div>
@@ -70,16 +67,16 @@
                 <div class="container">
                     <div class="row p-5">
                         <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
-                            <img class="img-fluid" src="/DuAn/views/assets/img/banner_img_03.jpg" alt="">
+                            <img class="img-fluid" src="./uploads/1722412756sp1.png" alt="">
                         </div>
-                        <div class="col-lg-6 mb-0 d-flex align-items-center">
+                        <div class="col-lg-6 mb-0">
                             <div class="text-align-left">
-                                <h1 class="h1">Repr in voluptate</h1>
-                                <h3 class="h2">Ullamco laboris nisi ut </h3>
-                                <p>
-                                    We bring you 100% free CSS templates for your websites. 
-                                    If you wish to support TemplateMo, please make a small contribution via PayPal or tell your friends about our website. Thank you.
-                                </p>
+                            <h1 class="h1">Sản Phẩm Nổi Bật</h1>
+                            <h3 class="h2">Ưu Đãi Đặc Biệt</h3>
+                            <p>
+                                Chúng tôi liên tục cập nhật các ưu đãi và khuyến mãi hấp dẫn cho khách hàng.
+                                 Đừng bỏ lỡ cơ hội sở hữu những sản phẩm yêu thích với giá ưu đãi nhất.
+                            </p>
                             </div>
                         </div>
                     </div>
@@ -133,7 +130,7 @@
         <div class="container py-5">
             <div class="row text-center py-3">
                 <div class="col-lg-6 m-auto">
-                    <h1 class="h1">Featured Product</h1>
+                    <h1 class="h1">Sản phẩm nổi bật</h1>
                     <p>
                         Reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
                         Excepteur sint occaecat cupidatat non proident.

@@ -19,6 +19,27 @@
 </head>
 
 <body>
+    <style>
+        /* Đặt chiều cao tối đa cho các mục trong carousel */
+        .carousel-item {
+            max-height: 500px; /* Điều chỉnh giá trị này theo ý muốn của bạn */
+        }
+
+        /* Đảm bảo các hình ảnh trong carousel không vượt quá chiều cao của mục */
+        .carousel-item img {
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Giảm padding trong các mục để làm giảm kích thước tổng thể */
+        .carousel-item .container .row {
+            padding: 2rem 1rem; /* Điều chỉnh giá trị này theo ý muốn của bạn */
+        }
+
+       
+
+
+    </style>
     <!-- Start Top Nav -->
     <nav class="navbar navbar-expand-lg bg-dark navbar-light d-none d-lg-block" id="templatemo_nav_top">
         <div class="container text-light">

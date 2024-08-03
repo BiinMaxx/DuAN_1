@@ -44,7 +44,7 @@ function deleteSessionError(){
     if(isset($_SESSION['flash'])){
         unset($_SESSION['flash']);
         session_unset();
-        session_destroy();
+        // session_destroy();
     }
 }
 
@@ -61,4 +61,10 @@ function uploadFileAlbum($file, $folderUpload,$key){
 // format data
 function formatDate($date){ 
     return date("d-m-Y", strtotime($date));
+}
+function checkLoginAdmin(){
+    if (!isset($_SESSION['user_admin'])) {
+        header("Loaction:". BASE_URL_ADMIN . '?act=login-admin');
+        exit();
+    }
 }

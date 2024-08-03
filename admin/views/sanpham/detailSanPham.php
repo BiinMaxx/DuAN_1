@@ -17,7 +17,7 @@ require './views/layout/sidebar.php';
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1>Quản lý Sản Phẩm</h1>
+          <h1>Chi tiết Sản Phẩm</h1>
         </div>
       </div>
     </div><!-- /.container-fluid -->
