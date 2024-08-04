@@ -226,36 +226,36 @@ class AdminTaiKhoanController
 
         deleteSessionError();
     }
-    public function Login(){
-        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            // Lấy email và pass gửi lên form
-            $email = $_POST['email'];
-            $password = $_POST['password'];
- 
-            // var_dump($password);die;    
+    // public function Logout(){
+    //     if (isset($_SESSION['user_admin'])) {
+    //         unset($_SESSION['user_admin']);
 
-            $user = $this->modelTaiKhoan->checkLogin($email,$password);
+    //         header("Location: " .BASE_URL_ADMIN .'?act=login-admin');
+    //     }
+    // }
+        public function Login(){
+            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                
+                $email = $_POST['email'];
+                $password = $_POST['password'];
 
-            if ($user == $email) {
-               $_SESSION['user_admin'] = $user;
-               header("Location:" .BASE_URL_ADMIN);
-               exit();
-            }else {
-                $_SESSION['erorr'] = $user;
+                // var_dump($password);die;
 
-                $_SESSION['flash'] = true;
+                $user = $this->modelTaiKhoan->checkLogin($email, $password);
 
-                header("Location:". BASE_URL_ADMIN . '?act=login-admin');
-                exit();
+                if ($user == $email) {
+                    
+                    $_SESSION['user_admin'] = $user;
+                    header("Location: " . BASE_URL_ADMIN);
+                    exit();
+                }else {
+                    $_SESSION['error'] = $user;
+
+                    $_SESSION['flash'] = true;
+
+                    header("Location: ". BASE_URL_ADMIN . '?act=login-admin');
+                    exit();
+                }
             }
         }
-    }
-    public function Logout(){
-        if (isset($_SESSION['user_admin'])) {
-            unset($_SESSION['user_admin']);
-
-            header("Location: " .BASE_URL_ADMIN .'?act=login-admin');
-        }
-    }
-
 }
