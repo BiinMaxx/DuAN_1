@@ -64,7 +64,7 @@ function formatDate($date){
 }
 function checkLoginAdmin(){
     if (!isset($_SESSION['user_admin'])) {
-        header("Loaction:". BASE_URL_ADMIN . '?act=login-admin');
+        header("location: http://localhost/DuAn/admin/?act=login-admin");
         exit();
     }
 }

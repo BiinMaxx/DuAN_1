@@ -18,7 +18,6 @@ require './views/layout/sidebar.php';
       <div class="row mb-2">
         <div class="col-sm-6">
           <h1>Thống kê</h1>
-          <?php var_dump($_SESSION['user_admin']); ?>
         </div>
       </div>
     </div><!-- /.container-fluid -->

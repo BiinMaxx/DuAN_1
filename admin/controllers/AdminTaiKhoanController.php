@@ -226,13 +226,13 @@ class AdminTaiKhoanController
 
         deleteSessionError();
     }
-    // public function Logout(){
-    //     if (isset($_SESSION['user_admin'])) {
-    //         unset($_SESSION['user_admin']);
+    public function Logout(){
+        if (isset($_SESSION['user_admin'])) {
+            unset($_SESSION['user_admin']);
 
-    //         header("Location: " .BASE_URL_ADMIN .'?act=login-admin');
-    //     }
-    // }
+            header("Location: " .BASE_URL_ADMIN .'?act=login-admin');
+        }
+    }
         public function Login(){
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 
