@@ -1,14 +1,14 @@
     <?php
-    require 'layout/header.php';
+    require 'layouts/header.php';
     ?>
     <!-- Navbar  -->
     <?php
-    require 'layout/content.php';
+    require 'layouts/content.php';
     ?>
 
     <!-- Start Footer -->
     <?php
-    require 'layout/footer.php';
+    require 'layouts/footer.php';
     ?>
     <!-- End Footer -->
     </body>
