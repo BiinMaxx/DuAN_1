@@ -24,6 +24,7 @@ class AdminDonHangController
         // Lấy thông tin đơn hàng ở bản don_hangs
 
         $donHang = $this->modelDonHang->getDetailDonHang($id_don_hang);
+        // var_dump($donHang);die;
 
         // Lấy danh sách sản phẩm đã đặt của đơn hàng ở bảng chi_tiet_don_hangs
 

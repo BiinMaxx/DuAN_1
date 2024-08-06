@@ -74,6 +74,12 @@ match ($act) {
    'form-sua-khach-hang'   =>  (new AdminTaiKhoanController()) ->formEditKhachHang(),
    'sua-khach-hang'   =>  (new AdminTaiKhoanController()) ->postEditKhachHang(),
    'chi-tiet-khach-hang'   =>  (new AdminTaiKhoanController()) ->detailKhachHang(),
+   
+   //route ca nhan
+   'form-sua-thong-tin-ca-nhan-quan-tri'   =>  (new AdminTaiKhoanController()) ->formEditCaNhanQuanTri(),
+//    'sua-thong-tin-ca-nhan-quan-tri'   =>  (new AdminTaiKhoanController()) ->postEditCaNhanQuanTri(),
+   'sua-mat-khau-ca-nhan-quan-tri'   =>  (new AdminTaiKhoanController()) ->postEditMatKhauCaNhan(),
+
 
    //route auth
    'login-admin'  =>    (new AdminTaiKhoanController())->formLogin(),
