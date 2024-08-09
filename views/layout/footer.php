@@ -60,7 +60,7 @@
                 <div class="row align-items-center mt-20">
                     <div class="col-md-6">
                         <div class="newsletter-wrapper">
-                            <h6 class="widget-title-text">Đăng nhập nhận tin</h6>
+                            <h6 class="widget-title-text">Đăng ký nhận tin</h6>
                             <form class="newsletter-inner" id="mc-form">
                                 <input type="email" class="news-field" id="mc-email" autocomplete="off" placeholder="Enter your email address">
                                 <button class="news-btn" id="mc-submit">Đăng ký</button>
