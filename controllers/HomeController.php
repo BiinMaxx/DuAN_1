@@ -9,13 +9,16 @@ class HomeController
 
     }
     public function home(){
-        require_once './views/client/home.php';
+
+        $listSanPham = $this->modelSanPham->getAllSanPham();
+
+        require_once './views/home.php';
     }
     public function trangChu(){
 
     }
     public function danhSachSanPham(){
-        $listProduct = $this->modelSanPham->getAllProduct();
+        $listProduct = $this->modelSanPham->getAllSanPham();
 
         require_once './views/listProduct.php';
     }
