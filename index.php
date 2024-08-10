@@ -19,5 +19,9 @@ match ($act) {
     // Trang chủ
     '/'         => (new HomeController())-> home(),
     'trangChu'  => (new HomeController())->trangChu(),
-    'danh-sach-san-pham'=>(new HomeController())->danhSachSanPham(),
+    // 'danh-sach-san-pham'=>(new HomeController())->danhSachSanPham(),
+
+    // Chi tiết sp
+    'chi-tiet-san-pham' => (new HomeController())->chiTietSanPham(),
+
 };
