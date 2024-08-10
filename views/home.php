@@ -9,62 +9,63 @@ require_once 'layout/menu.php';
 <main>
     <!-- hero slider area start -->
     <section class="slider-area">
-        <div class="hero-slider-active slick-arrow-style slick-arrow-style_hero slick-dot-style">
-            <!-- single slider item start -->
-            <div class="hero-single-slide hero-overlay">
-                <div class="hero-slider-item bg-img" data-bg="./views/assets/img/slider/1722413479a4.jpg">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="hero-slider-content slide-1">
-                                    <h2 class="slide-title">Family Jewelry <span>Collection</span></h2>
-                                    <h4 class="slide-desc">Designer Jewelry Necklaces-Bracelets-Earings</h4>
-                                    <a href="shop.html" class="btn btn-hero">Read More</a>
-                                </div>
+    <div class="hero-slider-active slick-arrow-style slick-arrow-style_hero slick-dot-style">
+        <!-- single slider item start -->
+        <div class="hero-single-slide hero-overlay">
+            <div class="hero-slider-item bg-img" data-bg="./views/assets/img/slider/1722413479a4.jpg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="hero-slider-content slide-1">
+                                <h2 class="slide-title">Coza Store <span>Collection</span></h2>
+                                <h4 class="slide-desc">Thời trang nam - Quần áo, giày dép, phụ kiện.</h4>
+                                <a href="shop.html" class="btn btn-hero">Xem thêm</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- single slider item start -->
-
-            <!-- single slider item start -->
-            <div class="hero-single-slide hero-overlay">
-                <div class="hero-slider-item bg-img" data-bg="./views/assets/img/slider/1722412756anh1-4.png">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="hero-slider-content slide-2 float-md-end float-none">
-                                    <h2 class="slide-title">Diamonds Jewelry<span>Collection</span></h2>
-                                    <h4 class="slide-desc">Shukra Yogam & Silver Power Silver Saving Schemes.</h4>
-                                    <a href="shop.html" class="btn btn-hero">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- single slider item start -->
-
-            <!-- single slider item start -->
-            <div class="hero-single-slide hero-overlay">
-                <div class="hero-slider-item bg-img" data-bg="./views/assets/img/slider/1722413817anh7-5.png">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="hero-slider-content slide-3">
-                                    <h2 class="slide-title">Grace Designer<span>Jewelry</span></h2>
-                                    <h4 class="slide-desc">Rings, Occasion Pieces, Pandora & More.</h4>
-                                    <a href="shop.html" class="btn btn-hero">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- single slider item end -->
         </div>
-    </section>
+        <!-- single slider item end -->
+
+        <!-- single slider item start -->
+        <div class="hero-single-slide hero-overlay">
+            <div class="hero-slider-item bg-img" data-bg="./views/assets/img/slider/1722412756anh1-4.png">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="hero-slider-content slide-2 float-md-end float-none">
+                                <h2 class="slide-title">Bộ Sưu Tập <span>Coza Store</span></h2>
+                                <h4 class="slide-desc">Trang phục nam tính, phong cách và đẳng cấp.</h4>
+                                <a href="shop.html" class="btn btn-hero">Khám phá ngay</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- single slider item end -->
+
+        <!-- single slider item start -->
+        <div class="hero-single-slide hero-overlay">
+            <div class="hero-slider-item bg-img" data-bg="./views/assets/img/slider/1722413817anh7-5.png">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="hero-slider-content slide-3">
+                                <h2 class="slide-title">Coza Store<span>Thời Trang Nam</span></h2>
+                                <h4 class="slide-desc">Mẫu mã đa dạng, chất liệu cao cấp.</h4>
+                                <a href="shop.html" class="btn btn-hero">Mua ngay</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- single slider item end -->
+    </div>
+</section>
+
     <!-- hero slider area end -->
     <!-- service policy area start -->
     <div class="service-policy section-padding">
@@ -121,35 +122,36 @@ require_once 'layout/menu.php';
 
     <!-- banner statistics area start -->
     <div class="banner-statistics-area">
-        <div class="container">
-            <div class="row row-20 mtn-20">
-                <div class="col-sm-6">
-                    <figure class="banner-statistics mt-20">
-                        <a href="#">
-                            <img src="./views/assets/img/slider/1722412756anh1-4.png" alt="product banner">
-                        </a>
-                        <div class="banner-content text-right">
-                            <h5 class="banner-text1">BEAUTIFUL</h5>
-                            <h2 class="banner-text2">Wedding<span>Rings</span></h2>
-                            <a href="shop.html" class="btn btn-text">Shop Now</a>
-                        </div>
-                    </figure>
-                </div>
-                <div class="col-sm-6">
-                    <figure class="banner-statistics mt-20">
-                        <a href="#">
-                            <img src="./views/assets/img/slider/1722413817anh7-5.png" alt="product banner">
-                        </a>
-                        <div class="banner-content text-center">
-                            <h5 class="banner-text1">EARRINGS</h5>
-                            <h2 class="banner-text2">Tangerine Floral <span>Earring</span></h2>
-                            <a href="shop.html" class="btn btn-text">Shop Now</a>
-                        </div>
-                    </figure>
-                </div>
+    <div class="container">
+        <div class="row row-20 mtn-20">
+            <div class="col-sm-6">
+                <figure class="banner-statistics mt-20">
+                    <a href="#">
+                        <img src="./views/assets/img/slider/1722412756anh1-4.png" alt="product banner">
+                    </a>
+                    <div class="banner-content text-right">
+                        <h5 class="banner-text1">Thời trang</h5>
+                        <h2 class="banner-text2">Bộ sưu tập <span>Áo Coza</span></h2>
+                        <a href="shop.html" class="btn btn-text">Mua Ngay</a>
+                    </div>
+                </figure>
+            </div>
+            <div class="col-sm-6">
+                <figure class="banner-statistics mt-20">
+                    <a href="#">
+                        <img src="./views/assets/img/slider/1722413817anh7-5.png" alt="product banner">
+                    </a>
+                    <div class="banner-content text-center">
+                        <h5 class="banner-text1">Phong cách</h5>
+                        <h2 class="banner-text2">Bộ sưu tập <span>Áo sơ mi</span></h2>
+                        <a href="shop.html" class="btn btn-text">Mua Ngay</a>
+                    </div>
+                </figure>
             </div>
         </div>
     </div>
+</div>
+
     <!-- banner statistics area end -->
 
     <!-- product area start -->
