@@ -271,7 +271,7 @@ class AdminTaiKhoanController
     }
 
     public function postEditMatKhauCaNhan(){
-        if($_SERVER(['REQUEST_METHOD'] =='POST')){
+        if($_SERVER['REQUEST_METHOD'] =='POST'){
             $old_pass = $_POST['old_pass'];
             $new_pass = $_POST['new_pass'];
             $confirm_pass = $_POST['confirm_pass'];
@@ -282,7 +282,8 @@ class AdminTaiKhoanController
             $checkPass = password_verify($old_pass, $user['mat_khau']);
             
             $errors=[];
-            if (empty($checkPass)) {
+
+            if (!$checkPass) {
                 $errors['old_pass'] = 'Mật khẩu người dùng không đúng';
             }            
             if ($new_pass !== $confirm_pass) {
@@ -300,9 +301,10 @@ class AdminTaiKhoanController
 
             $_SESSION['error'] = $errors;
             if(!$errors){
-
                 $hashPass = password_hash($new_pass,PASSWORD_BCRYPT);
+
                 $status = $this->modelTaiKhoan->resetPassword($user['id'],$hashPass);
+
                 if($status){
                     $_SESSION['success'] = "Đã Đổi mật khẩu thành công";
                     $_SESSION['flash'] = true;
