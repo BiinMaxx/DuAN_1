@@ -69,6 +69,12 @@ function checkLoginAdmin(){
         exit();
     }
 }
+function checkLoginClient(){
+    if (!isset($_SESSION['user_client'])) {
+        header("location: http://localhost/DuAn/?act=login");
+        exit();
+    }
+}
 function formatPrice($price){
     return number_format($price, 0, ',', '.');
 }

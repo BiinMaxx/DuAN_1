@@ -60,9 +60,13 @@
                                             <i class="pe-7s-user"></i>
                                         </a>
                                         <ul class="dropdown-list">
-                                            <li><a href="login-register.html">Đăng nhập</a></li>
-                                            <li><a href="login-register.html">Đăng ký</a></li>
-                                            <li><a href="my-account.html">Tài khoản</a></li>
+                                            <?php if(isset($_SESSION['user_client']) && $_SESSION['user_client'] !== "") {?>
+                                                <li><a href="<?= BASE_URL. '?act=logout'?>">LogOut</a></li>
+                                                <?php }else{?>
+                                                    <li><a href="<?= BASE_URL. '?act=login'?>">Đăng nhập</a></li>
+                                                    <li><a href="login-register.html">Đăng ký</a></li>
+                                                    <li><a href="my-account.html">Tài khoản</a></li>
+                                            <?php }?> 
                                         </ul>
                                     </li>
                                     <li>
