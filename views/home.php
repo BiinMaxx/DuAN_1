@@ -17,8 +17,8 @@ require_once 'layout/menu.php';
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="hero-slider-content slide-1">
-                                    <h2 class="slide-title">Family Jewelry <span>Collection</span></h2>
-                                    <h4 class="slide-desc">Designer Jewelry Necklaces-Bracelets-Earings</h4>
+                                    <h2 class="slide-title">NIKE TECH <span>Collection</span></h2>
+                                    <h4 class="slide-desc">Not just a Shirt. It's a fashion, a whole new style</h4>
                                     <a href="shop.html" class="btn btn-hero">Read More</a>
                                 </div>
                             </div>
@@ -35,8 +35,8 @@ require_once 'layout/menu.php';
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="hero-slider-content slide-2 float-md-end float-none">
-                                    <h2 class="slide-title">Diamonds Jewelry<span>Collection</span></h2>
-                                    <h4 class="slide-desc">Shukra Yogam & Silver Power Silver Saving Schemes.</h4>
+                                    <h2 class="slide-title">Nike Electric Pack<span>WIN ON AIR</span></h2>
+                                    <h4 class="slide-desc">Engineered for those who stand out.</h4>
                                     <a href="shop.html" class="btn btn-hero">Read More</a>
                                 </div>
                             </div>
@@ -53,8 +53,8 @@ require_once 'layout/menu.php';
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="hero-slider-content slide-3">
-                                    <h2 class="slide-title">Grace Designer<span>Jewelry</span></h2>
-                                    <h4 class="slide-desc">Rings, Occasion Pieces, Pandora & More.</h4>
+                                    <h2 class="slide-title">Nike Pants<span>Collection</span></h2>
+                                    <h4 class="slide-desc">Not just a pants. It's a fashion, a whole new style</h4>
                                     <a href="shop.html" class="btn btn-hero">Read More</a>
                                 </div>
                             </div>
