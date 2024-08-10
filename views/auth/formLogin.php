@@ -15,7 +15,7 @@ require_once 'views/layout/menu.php';
                         <div class="breadcrumb-wrap">
                             <nav aria-label="breadcrumb">
                                 <ul class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="index.html"><i class="fa fa-home"></i></a></li>
+                                    <li class="breadcrumb-item"><a href="<?= BASE_URL ?>"><i class="fa fa-home"></i></a></li>
                                     <li class="breadcrumb-item active" aria-current="page">login-Register</li>
                                 </ul>
                             </nav>
@@ -34,7 +34,7 @@ require_once 'views/layout/menu.php';
                         <!-- Login Content Start -->
                         <div class="col-lg-12">
                             <div class="login-reg-form-wrap">
-                                <h5 class="text-center">Sign In</h5>
+                                <h1 class="text-center">Đăng nhập</h1>
                                 <?php
                                 if (isset($_SESSION['error'])) { ?>
                                     <p class="text-danger login-box-msg text-center"><?= $_SESSION['error'] ?></p>
@@ -43,18 +43,18 @@ require_once 'views/layout/menu.php';
                                 <?php } ?>
                                 <form action="<?= BASE_URL. '?act=check-login'?>" method="post">
                                     <div class="single-input-item">
-                                        <input type="email" placeholder="Email or Username" name="email" required />
+                                        <input type="email" placeholder="Nhập email hoặc tên người dùng" name="email" required />
                                     </div>
                                     <div class="single-input-item">
-                                        <input type="password" placeholder="Enter your Password" name="password" required />
+                                        <input type="password" placeholder="Nhập mật khẩu" name="password" required />
                                     </div>
                                     <div class="single-input-item">
                                         <div class="login-reg-form-meta d-flex align-items-center justify-content-between">
-                                            <a href="#" class="forget-pwd">Forget Password?</a>
+                                            <a href="#" class="forget-pwd">Quên mật khẩu?</a>
                                         </div>
                                     </div>
                                     <div class="single-input-item">
-                                        <button class="btn btn-sqr">Login</button>
+                                        <button class="btn btn-sqr">Đăng nhập</button>
                                     </div>
                                 </form>
                             </div>
