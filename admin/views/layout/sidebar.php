@@ -82,7 +82,7 @@
              <li class="nav-item">
                <a href="<?= BASE_URL_ADMIN . '?act=form-sua-thong-tin-ca-nhan-quan-tri'?>" class="nav-link">
                  <i class="nav-icon far fa-user"></i>
-                 <p>Tài Khoản Cá Nhân</p>
+                 <p>Mật khẩu Cá Nhân</p>
                </a>
              </li>
            </ul>
