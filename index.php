@@ -14,11 +14,6 @@ require_once './models/TaiKhoan.php';
 // Route
 $act = $_GET['act'] ?? '/';
 
-if ($act !== 'login' && $act !== 'check-login' && $act !== 'logout') {
-    checkLoginClient();
-
-}
-
 // Để bảo bảo tính chất chỉ gọi 1 hàm Controller để xử lý request thì mình sử dụng match
 
 match ($act) {
