@@ -26,5 +26,19 @@
     height: 40px; /* Đặt chiều cao cố định */
     margin: 0; /* Xóa khoảng cách giữa các nút trong btn-group */
 }
+.navbar-nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-item {
+    margin-left: 15px; /* Khoảng cách giữa các item */
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+}
+
   </style>
   

@@ -57,16 +57,27 @@ class HomeController
 
             $user = $this->modelTaiKhoan->checkLogin($email, $password);
 
-            if ($user == $email) {
+            // if ($user == $email) {
 
-                $_SESSION['user_client'] = $user;
+            //     $_SESSION['user_client'] = $user;
+            //     header("Location: " . BASE_URL);
+            //     exit();
+            // } else {
+            //     $_SESSION['error'] = $user;
+
+            //     $_SESSION['flash'] = true;
+
+            //     header("Location: " . BASE_URL . '?act=login');
+            //     exit();
+            // }
+            // Để hiển thị tên người đăng nhập
+            
+            if (is_array($user)) {
+                $_SESSION['user_client'] = $user; // Lưu toàn bộ thông tin người dùng vào session
                 header("Location: " . BASE_URL);
                 exit();
             } else {
                 $_SESSION['error'] = $user;
-
-                $_SESSION['flash'] = true;
-
                 header("Location: " . BASE_URL . '?act=login');
                 exit();
             }
