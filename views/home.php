@@ -256,5 +256,6 @@ require_once 'layout/menu.php';
                         <!-- product area end -->
 </main>
 <!-- End--Slider -->
+<?php require_once 'layout/miniCart.php'; ?>
 
 <?php require_once 'layout/footer.php'; ?>

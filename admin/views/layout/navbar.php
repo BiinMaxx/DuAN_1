@@ -22,12 +22,7 @@
     <!-- Thông tin người dùng và đăng xuất -->
     <li class="nav-item">
         <a class="nav-link" href="#">
-            <i class="pe-7s-user" style="font-size: 25px;">
-                <?php if (isset($_SESSION['user_admin']) && is_array($_SESSION['user_admin'])): ?>
-                    <?php echo htmlspecialchars($_SESSION['user_admin']['ho_ten']); ?>
-                <?php else: ?>
-                    <!-- Không có người dùng đăng nhập -->
-                <?php endif; ?>
+            <i class="pe-7s-user">
             </i>
         </a>
     </li>

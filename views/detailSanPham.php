@@ -89,15 +89,18 @@ require_once 'layout/menu.php';
                                         <span><?= $sanPham['so_luong'] . 'trong cửa hàng' ?></span>
                                     </div>
                                     <p class="pro-desc"><?= $sanPham['mo_ta'] ?></p>
+                                    <form action="<?= BASE_URL . '?act=them-gio-hang' ?>" method="post">
                                     <div class="quantity-cart-box d-flex align-items-center">
                                         <h6 class="option-title">Số lượng:</h6>
                                         <div class="quantity">
-                                            <div class="pro-qty"><input type="text" value="1"></div>
+                                            <input type="hidden" name="san_pham_id" value="<?= $sanPham['id'];?>">
+                                            <div class="pro-qty"><input type="text" value="1" name="so_luong"></div>
                                         </div>
                                         <div class="action_link">
-                                            <a class="btn btn-cart2" href="#">Thêm giỏ hàng</a>
+                                            <button class="btn btn-cart2" href="">Thêm giỏ hàng</button>
                                         </div>
                                     </div>
+                                    </form>
                                     <div class="useful-links">
                                         <a href="#" data-bs-toggle="tooltip" title="Compare"><i
                                                 class="pe-7s-refresh-2"></i>compare</a>
@@ -265,5 +268,6 @@ require_once 'layout/menu.php';
     <!-- related products area end -->
 </main>
 <!-- End--Detail -->
+<?php require_once 'layout/miniCart.php'; ?>
 
 <?php require_once 'layout/footer.php'; ?>

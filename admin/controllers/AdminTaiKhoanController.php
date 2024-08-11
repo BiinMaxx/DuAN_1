@@ -247,30 +247,16 @@ class AdminTaiKhoanController
 
             $user = $this->modelTaiKhoan->checkLogin($email, $password);
 
-            // if ($user == $email) {
-
-            //     $_SESSION['user_admin'] = $user;
-            //     header("Location: " . BASE_URL_ADMIN);
-            //     exit();
-            // } else {
-            //     $_SESSION['error'] = $user;
-
-            //     $_SESSION['flash'] = true;
-
-            //     header("Location: " . BASE_URL_ADMIN . '?act=login-admin');
-            //     exit();
-            // }
-
-            // Hiển thị tên admin LOGin 
             if ($user == $email) {
-                // Lấy toàn bộ thông tin người dùng
-                $userInfo = $this->modelTaiKhoan->getTaiKhoanforEmal($email);
-                $_SESSION['user_admin'] = $userInfo;
+
+                $_SESSION['user_admin'] = $user;
                 header("Location: " . BASE_URL_ADMIN);
                 exit();
             } else {
                 $_SESSION['error'] = $user;
+
                 $_SESSION['flash'] = true;
+
                 header("Location: " . BASE_URL_ADMIN . '?act=login-admin');
                 exit();
             }

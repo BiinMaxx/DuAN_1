@@ -54,24 +54,22 @@
                         </div>
                         <div class="header-configure-area">
                             <ul class="nav justify-content-end">
+                                <label for="">
+                                    <?php if (isset($_SESSION['user_client'])){
+                                        echo $_SESSION['user_client'];
+                                    } ?>
+                                </label>
                                 <li class="user-hover">
                                     <a href="#">
-                                        <i class="pe-7s-user" style="font-size: 25px;">
-                                            <?php if (isset($_SESSION['user_client']) && is_array($_SESSION['user_client'])): ?>
-                                                <?php echo $_SESSION['user_client']['ho_ten']; ?>
-                                                <!-- Hiển thị tên người dùng -->
-                                            <?php else: ?>
-                                            <?php endif; ?>
+                                        <i class="pe-7s-user">
                                         </i>
                                     </a>
                                     <ul class="dropdown-list">
-                                        <?php if (isset($_SESSION['user_client']) && !empty($_SESSION['user_client'])): ?>
-                                            <li><a href="<?= BASE_URL . '?act=logout' ?>">LogOut</a></li>
-                                        <?php else: ?>
+                                        <?php if (!isset($_SESSION['user_client']) ){ ?>
                                             <li><a href="<?= BASE_URL . '?act=login' ?>">Đăng nhập</a></li>
-                                            <li><a href="login-register.html">Đăng ký</a></li>
+                                        <?php } else { ?>
                                             <li><a href="my-account.html">Tài khoản</a></li>
-                                        <?php endif; ?>
+                                        <?php }?>
                                     </ul>
                                 </li>
 
