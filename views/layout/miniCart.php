@@ -12,7 +12,7 @@
                             <li class="minicart-item">
                                 <div class="minicart-thumb">
                                     <a href="product-details.html">
-                                        <img src="assets/img/cart/cart-1.jpg" alt="product">
+                                        <img src="./views/assets/img/cart/cart-1.jpg" alt="product">
                                     </a>
                                 </div>
                                 <div class="minicart-content">
@@ -29,7 +29,7 @@
                             <li class="minicart-item">
                                 <div class="minicart-thumb">
                                     <a href="product-details.html">
-                                        <img src="assets/img/cart/cart-2.jpg" alt="product">
+                                        <img src="./views/assets/img/cart/cart-2.jpg" alt="product">
                                     </a>
                                 </div>
                                 <div class="minicart-content">
